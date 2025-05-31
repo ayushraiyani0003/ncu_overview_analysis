@@ -1,0 +1,11 @@
+# Python and Git ignores
+__pycache__/
+*.py[cod]
+*$py.class
+.history/
+.git/
+.vscode/
+venv/
+env/
+.env
+.DS_Store
