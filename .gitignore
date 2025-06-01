@@ -10,3 +10,5 @@ env/
 .env
 .DS_Store
 .venv
+*.log
+ncu_collector.log
