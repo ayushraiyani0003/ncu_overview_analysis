@@ -9,7 +9,7 @@ from database_manager import DatabaseManager
 # Import your existing functions
 from collection_stats import create_collection_stats_page  # Assuming your first file is saved as paste.py
 from realtime_dashboard import create_realtime_dashboard    # Assuming your second file is saved as paste2.py
-
+from deep_analysis import create_deep_analysis_dashboard
 def main():
     """Main application with navigation"""
     
@@ -27,7 +27,7 @@ def main():
     # Page selection
     page = st.sidebar.selectbox(
         "Select Page",
-        ["🔴 Real-time Dashboard", "📊 Collection Statistics"],
+        ["🔴 Real-time Dashboard", "📊 Collection Statistics",  "🔍 Deep Analysis"],
         index=0
     )
     
@@ -48,6 +48,9 @@ def main():
         create_realtime_dashboard()
     elif page == "📊 Collection Statistics":
         create_collection_stats_page()
+    elif page == "🔍 Deep Analysis":
+        create_deep_analysis_dashboard()
+
 
 if __name__ == "__main__":
     main()

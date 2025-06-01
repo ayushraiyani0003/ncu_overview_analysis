@@ -1206,3 +1206,334 @@ mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'collectio
 2025-06-01 08:55:44,369 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
 2025-06-01 08:55:44,369 - INFO - Data collection completed successfully in 0.60 seconds
 2025-06-01 08:55:44,370 - INFO - Data collection successful
+2025-06-01 08:57:44,371 - INFO - Starting data collection...
+2025-06-01 08:57:44,372 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748764664372
+2025-06-01 08:57:44,898 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 08:57:44,898 - INFO - Data collection completed successfully in 0.51 seconds
+2025-06-01 08:57:44,898 - INFO - Data collection successful
+2025-06-01 08:59:44,900 - INFO - Starting data collection...
+2025-06-01 08:59:44,900 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748764784900
+2025-06-01 08:59:45,489 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 08:59:45,489 - INFO - Data collection completed successfully in 0.57 seconds
+2025-06-01 08:59:45,489 - INFO - Data collection successful
+2025-06-01 09:01:45,490 - INFO - Starting data collection...
+2025-06-01 09:01:45,491 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748764905491
+2025-06-01 09:01:46,106 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:01:46,106 - INFO - Data collection completed successfully in 0.59 seconds
+2025-06-01 09:01:46,106 - INFO - Data collection successful
+2025-06-01 09:03:46,108 - INFO - Starting data collection...
+2025-06-01 09:03:46,108 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748765026108
+2025-06-01 09:03:46,646 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:03:46,646 - INFO - Data collection completed successfully in 0.52 seconds
+2025-06-01 09:03:46,646 - INFO - Data collection successful
+2025-06-01 09:05:46,647 - INFO - Starting data collection...
+2025-06-01 09:05:46,647 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748765146647
+2025-06-01 09:05:47,278 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:05:47,278 - INFO - Data collection completed successfully in 0.62 seconds
+2025-06-01 09:05:47,278 - INFO - Data collection successful
+2025-06-01 09:07:47,279 - INFO - Starting data collection...
+2025-06-01 09:07:47,279 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748765267279
+2025-06-01 09:07:47,789 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:07:47,790 - INFO - Data collection completed successfully in 0.50 seconds
+2025-06-01 09:07:47,790 - INFO - Data collection successful
+2025-06-01 09:09:47,791 - INFO - Starting data collection...
+2025-06-01 09:09:47,791 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748765387791
+2025-06-01 09:09:48,389 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:09:48,389 - INFO - Data collection completed successfully in 0.53 seconds
+2025-06-01 09:09:48,389 - INFO - Data collection successful
+2025-06-01 09:11:48,391 - INFO - Starting data collection...
+2025-06-01 09:11:48,391 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748765508391
+2025-06-01 09:11:49,057 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:11:49,057 - INFO - Data collection completed successfully in 0.65 seconds
+2025-06-01 09:11:49,057 - INFO - Data collection successful
+2025-06-01 09:13:49,059 - INFO - Starting data collection...
+2025-06-01 09:13:49,059 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748765629059
+2025-06-01 09:13:49,564 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:13:49,564 - INFO - Data collection completed successfully in 0.49 seconds
+2025-06-01 09:13:49,564 - INFO - Data collection successful
+2025-06-01 09:13:49,565 - INFO - Collection #60 completed. Consecutive failures: 0
+2025-06-01 09:15:49,566 - INFO - Starting data collection...
+2025-06-01 09:15:50,232 - INFO - Logged out successfully
+2025-06-01 09:15:50,232 - INFO - Attempting login (attempt 1/3)
+2025-06-01 09:15:51,438 - INFO - Login successful
+2025-06-01 09:15:51,438 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748765751438
+2025-06-01 09:15:51,943 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:15:51,943 - INFO - Data collection completed successfully in 2.36 seconds
+2025-06-01 09:15:51,943 - INFO - Data collection successful
+2025-06-01 09:16:11,790 - INFO - Service Status: {'is_running': True, 'is_logged_in': True, 'consecutive_failures': 0, 'last_login_time': datetime.datetime(2025, 6, 1, 9, 15, 51, 438804), 'collection_count': 61}
+2025-06-01 09:17:51,945 - INFO - Starting data collection...
+2025-06-01 09:17:51,945 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748765871945
+2025-06-01 09:17:52,448 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:17:52,448 - INFO - Data collection completed successfully in 0.47 seconds
+2025-06-01 09:17:52,448 - INFO - Data collection successful
+2025-06-01 09:19:52,449 - INFO - Starting data collection...
+2025-06-01 09:19:52,449 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748765992449
+2025-06-01 09:19:53,044 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:19:53,044 - INFO - Data collection completed successfully in 0.58 seconds
+2025-06-01 09:19:53,044 - INFO - Data collection successful
+2025-06-01 09:21:53,046 - INFO - Starting data collection...
+2025-06-01 09:21:53,046 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748766113046
+2025-06-01 09:21:53,558 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:21:53,558 - INFO - Data collection completed successfully in 0.50 seconds
+2025-06-01 09:21:53,558 - INFO - Data collection successful
+2025-06-01 09:23:53,560 - INFO - Starting data collection...
+2025-06-01 09:23:53,560 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748766233560
+2025-06-01 09:23:54,156 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:23:54,156 - INFO - Data collection completed successfully in 0.58 seconds
+2025-06-01 09:23:54,156 - INFO - Data collection successful
+2025-06-01 09:25:54,158 - INFO - Starting data collection...
+2025-06-01 09:25:54,158 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748766354158
+2025-06-01 09:25:54,810 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:25:54,810 - INFO - Data collection completed successfully in 0.64 seconds
+2025-06-01 09:25:54,810 - INFO - Data collection successful
+2025-06-01 09:27:54,811 - INFO - Starting data collection...
+2025-06-01 09:27:54,811 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748766474811
+2025-06-01 09:27:55,411 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:27:55,411 - INFO - Data collection completed successfully in 0.59 seconds
+2025-06-01 09:27:55,411 - INFO - Data collection successful
+2025-06-01 09:29:55,413 - INFO - Starting data collection...
+2025-06-01 09:29:55,413 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748766595413
+2025-06-01 09:29:55,898 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:29:55,898 - INFO - Data collection completed successfully in 0.47 seconds
+2025-06-01 09:29:55,898 - INFO - Data collection successful
+2025-06-01 09:31:55,900 - INFO - Starting data collection...
+2025-06-01 09:31:55,900 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748766715900
+2025-06-01 09:31:56,425 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:31:56,425 - INFO - Data collection completed successfully in 0.51 seconds
+2025-06-01 09:31:56,425 - INFO - Data collection successful
+2025-06-01 09:33:56,427 - INFO - Starting data collection...
+2025-06-01 09:33:56,427 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748766836427
+2025-06-01 09:33:56,984 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:33:56,984 - INFO - Data collection completed successfully in 0.54 seconds
+2025-06-01 09:33:56,984 - INFO - Data collection successful
+2025-06-01 09:33:56,984 - INFO - Collection #70 completed. Consecutive failures: 0
+2025-06-01 09:35:56,985 - INFO - Starting data collection...
+2025-06-01 09:35:56,985 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748766956985
+2025-06-01 09:35:57,523 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:35:57,523 - INFO - Data collection completed successfully in 0.52 seconds
+2025-06-01 09:35:57,523 - INFO - Data collection successful
+2025-06-01 09:37:57,525 - INFO - Starting data collection...
+2025-06-01 09:37:57,525 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748767077525
+2025-06-01 09:37:58,080 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:37:58,080 - INFO - Data collection completed successfully in 0.54 seconds
+2025-06-01 09:37:58,080 - INFO - Data collection successful
+2025-06-01 09:39:58,081 - INFO - Starting data collection...
+2025-06-01 09:39:58,082 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748767198082
+2025-06-01 09:39:58,623 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:39:58,623 - INFO - Data collection completed successfully in 0.53 seconds
+2025-06-01 09:39:58,623 - INFO - Data collection successful
+2025-06-01 09:41:58,624 - INFO - Starting data collection...
+2025-06-01 09:41:58,625 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748767318625
+2025-06-01 09:41:59,130 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:41:59,130 - INFO - Data collection completed successfully in 0.49 seconds
+2025-06-01 09:41:59,130 - INFO - Data collection successful
+2025-06-01 09:43:59,132 - INFO - Starting data collection...
+2025-06-01 09:43:59,132 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748767439132
+2025-06-01 09:43:59,680 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:43:59,680 - INFO - Data collection completed successfully in 0.54 seconds
+2025-06-01 09:43:59,680 - INFO - Data collection successful
+2025-06-01 09:45:59,682 - INFO - Starting data collection...
+2025-06-01 09:45:59,682 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748767559682
+2025-06-01 09:46:00,360 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:46:00,360 - INFO - Data collection completed successfully in 0.67 seconds
+2025-06-01 09:46:00,361 - INFO - Data collection successful
+2025-06-01 09:46:11,793 - INFO - Service Status: {'is_running': True, 'is_logged_in': True, 'consecutive_failures': 0, 'last_login_time': datetime.datetime(2025, 6, 1, 9, 15, 51, 438804), 'collection_count': 76}
+2025-06-01 09:48:00,362 - INFO - Starting data collection...
+2025-06-01 09:48:00,362 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748767680362
+2025-06-01 09:48:01,239 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:48:01,239 - INFO - Data collection completed successfully in 0.86 seconds
+2025-06-01 09:48:01,239 - INFO - Data collection successful
+2025-06-01 09:50:01,241 - INFO - Starting data collection...
+2025-06-01 09:50:01,241 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748767801241
+2025-06-01 09:50:02,622 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:50:02,622 - INFO - Data collection completed successfully in 1.37 seconds
+2025-06-01 09:50:02,622 - INFO - Data collection successful
+2025-06-01 09:52:02,624 - INFO - Starting data collection...
+2025-06-01 09:52:02,624 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748767922624
+2025-06-01 09:52:03,418 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:52:03,418 - INFO - Data collection completed successfully in 0.78 seconds
+2025-06-01 09:52:03,418 - INFO - Data collection successful
+2025-06-01 09:54:03,420 - INFO - Starting data collection...
+2025-06-01 09:54:03,420 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748768043420
+2025-06-01 09:54:04,094 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:54:04,094 - INFO - Data collection completed successfully in 0.66 seconds
+2025-06-01 09:54:04,095 - INFO - Data collection successful
+2025-06-01 09:54:04,095 - INFO - Collection #80 completed. Consecutive failures: 0
+2025-06-01 09:56:04,096 - INFO - Starting data collection...
+2025-06-01 09:56:04,096 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748768164096
+2025-06-01 09:56:04,714 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:56:04,714 - INFO - Data collection completed successfully in 0.61 seconds
+2025-06-01 09:56:04,714 - INFO - Data collection successful
+2025-06-01 09:58:04,715 - INFO - Starting data collection...
+2025-06-01 09:58:04,715 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748768284715
+2025-06-01 09:58:05,402 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 09:58:05,402 - INFO - Data collection completed successfully in 0.67 seconds
+2025-06-01 09:58:05,402 - INFO - Data collection successful
+2025-06-01 10:00:05,403 - INFO - Starting data collection...
+2025-06-01 10:00:05,404 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748768405404
+2025-06-01 10:00:06,622 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:00:06,622 - INFO - Data collection completed successfully in 1.21 seconds
+2025-06-01 10:00:06,622 - INFO - Data collection successful
+2025-06-01 10:02:06,623 - INFO - Starting data collection...
+2025-06-01 10:02:06,624 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748768526624
+2025-06-01 10:02:07,125 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:02:07,125 - INFO - Data collection completed successfully in 0.49 seconds
+2025-06-01 10:02:07,125 - INFO - Data collection successful
+2025-06-01 10:04:07,126 - INFO - Starting data collection...
+2025-06-01 10:04:07,126 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748768647126
+2025-06-01 10:04:07,675 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:04:07,675 - INFO - Data collection completed successfully in 0.54 seconds
+2025-06-01 10:04:07,676 - INFO - Data collection successful
+2025-06-01 10:06:07,677 - INFO - Starting data collection...
+2025-06-01 10:06:07,677 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748768767677
+2025-06-01 10:06:08,286 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:06:08,286 - INFO - Data collection completed successfully in 0.60 seconds
+2025-06-01 10:06:08,287 - INFO - Data collection successful
+2025-06-01 10:08:08,288 - INFO - Starting data collection...
+2025-06-01 10:08:08,288 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748768888288
+2025-06-01 10:08:08,937 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:08:08,937 - INFO - Data collection completed successfully in 0.64 seconds
+2025-06-01 10:08:08,937 - INFO - Data collection successful
+2025-06-01 10:10:08,938 - INFO - Starting data collection...
+2025-06-01 10:10:08,938 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748769008938
+2025-06-01 10:10:09,623 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:10:09,623 - INFO - Data collection completed successfully in 0.66 seconds
+2025-06-01 10:10:09,623 - INFO - Data collection successful
+2025-06-01 10:12:09,625 - INFO - Starting data collection...
+2025-06-01 10:12:09,625 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748769129625
+2025-06-01 10:12:10,212 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:12:10,212 - INFO - Data collection completed successfully in 0.57 seconds
+2025-06-01 10:12:10,213 - INFO - Data collection successful
+2025-06-01 10:14:10,214 - INFO - Starting data collection...
+2025-06-01 10:14:10,214 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748769250214
+2025-06-01 10:14:10,721 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:14:10,721 - INFO - Data collection completed successfully in 0.49 seconds
+2025-06-01 10:14:10,721 - INFO - Data collection successful
+2025-06-01 10:14:10,721 - INFO - Collection #90 completed. Consecutive failures: 0
+2025-06-01 10:16:10,723 - INFO - Starting data collection...
+2025-06-01 10:16:11,610 - INFO - Logged out successfully
+2025-06-01 10:16:11,610 - INFO - Attempting login (attempt 1/3)
+2025-06-01 10:16:11,796 - INFO - Service Status: {'is_running': True, 'is_logged_in': False, 'consecutive_failures': 0, 'last_login_time': None, 'collection_count': 90}
+2025-06-01 10:16:12,824 - INFO - Login successful
+2025-06-01 10:16:12,824 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748769372824
+2025-06-01 10:16:13,362 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:16:13,363 - INFO - Data collection completed successfully in 2.63 seconds
+2025-06-01 10:16:13,363 - INFO - Data collection successful
+2025-06-01 10:18:13,364 - INFO - Starting data collection...
+2025-06-01 10:18:13,364 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748769493364
+2025-06-01 10:18:14,009 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:18:14,009 - INFO - Data collection completed successfully in 0.63 seconds
+2025-06-01 10:18:14,009 - INFO - Data collection successful
+2025-06-01 10:20:14,011 - INFO - Starting data collection...
+2025-06-01 10:20:14,011 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748769614011
+2025-06-01 10:20:14,570 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:20:14,570 - INFO - Data collection completed successfully in 0.55 seconds
+2025-06-01 10:20:14,570 - INFO - Data collection successful
+2025-06-01 10:22:14,572 - INFO - Starting data collection...
+2025-06-01 10:22:14,572 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748769734572
+2025-06-01 10:22:15,167 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:22:15,167 - INFO - Data collection completed successfully in 0.58 seconds
+2025-06-01 10:22:15,167 - INFO - Data collection successful
+2025-06-01 10:24:15,169 - INFO - Starting data collection...
+2025-06-01 10:24:15,169 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748769855169
+2025-06-01 10:24:15,754 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:24:15,754 - INFO - Data collection completed successfully in 0.57 seconds
+2025-06-01 10:24:15,754 - INFO - Data collection successful
+2025-06-01 10:26:15,756 - INFO - Starting data collection...
+2025-06-01 10:26:15,756 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748769975756
+2025-06-01 10:26:16,353 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:26:16,353 - INFO - Data collection completed successfully in 0.58 seconds
+2025-06-01 10:26:16,353 - INFO - Data collection successful
+2025-06-01 10:28:16,355 - INFO - Starting data collection...
+2025-06-01 10:28:16,355 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748770096355
+2025-06-01 10:28:16,916 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:28:16,916 - INFO - Data collection completed successfully in 0.55 seconds
+2025-06-01 10:28:16,916 - INFO - Data collection successful
+2025-06-01 10:30:16,918 - INFO - Starting data collection...
+2025-06-01 10:30:16,918 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748770216918
+2025-06-01 10:30:17,520 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:30:17,521 - INFO - Data collection completed successfully in 0.59 seconds
+2025-06-01 10:30:17,521 - INFO - Data collection successful
+2025-06-01 10:32:17,522 - INFO - Starting data collection...
+2025-06-01 10:32:17,522 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748770337522
+2025-06-01 10:32:18,263 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:32:18,263 - INFO - Data collection completed successfully in 0.73 seconds
+2025-06-01 10:32:18,263 - INFO - Data collection successful
+2025-06-01 10:34:18,265 - INFO - Starting data collection...
+2025-06-01 10:34:18,265 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748770458265
+2025-06-01 10:34:18,789 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:34:18,789 - INFO - Data collection completed successfully in 0.50 seconds
+2025-06-01 10:34:18,789 - INFO - Data collection successful
+2025-06-01 10:34:18,789 - INFO - Collection #100 completed. Consecutive failures: 0
+2025-06-01 10:36:18,792 - INFO - Starting data collection...
+2025-06-01 10:36:18,792 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748770578792
+2025-06-01 10:36:19,391 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:36:19,391 - INFO - Data collection completed successfully in 0.55 seconds
+2025-06-01 10:36:19,391 - INFO - Data collection successful
+2025-06-01 10:38:19,393 - INFO - Starting data collection...
+2025-06-01 10:38:19,393 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748770699393
+2025-06-01 10:38:19,938 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:38:19,938 - INFO - Data collection completed successfully in 0.53 seconds
+2025-06-01 10:38:19,938 - INFO - Data collection successful
+2025-06-01 10:40:19,939 - INFO - Starting data collection...
+2025-06-01 10:40:19,940 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748770819940
+2025-06-01 10:40:20,531 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:40:20,531 - INFO - Data collection completed successfully in 0.58 seconds
+2025-06-01 10:40:20,531 - INFO - Data collection successful
+2025-06-01 10:42:20,532 - INFO - Starting data collection...
+2025-06-01 10:42:20,532 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748770940532
+2025-06-01 10:42:21,299 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:42:21,299 - INFO - Data collection completed successfully in 0.75 seconds
+2025-06-01 10:42:21,299 - INFO - Data collection successful
+2025-06-01 10:44:21,300 - INFO - Starting data collection...
+2025-06-01 10:44:21,301 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748771061301
+2025-06-01 10:44:21,801 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:44:21,801 - INFO - Data collection completed successfully in 0.48 seconds
+2025-06-01 10:44:21,802 - INFO - Data collection successful
+2025-06-01 10:46:11,799 - INFO - Service Status: {'is_running': True, 'is_logged_in': True, 'consecutive_failures': 0, 'last_login_time': datetime.datetime(2025, 6, 1, 10, 16, 12, 824357), 'collection_count': 105}
+2025-06-01 10:46:21,804 - INFO - Starting data collection...
+2025-06-01 10:46:21,804 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748771181804
+2025-06-01 10:46:22,460 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:46:22,460 - INFO - Data collection completed successfully in 0.64 seconds
+2025-06-01 10:46:22,460 - INFO - Data collection successful
+2025-06-01 10:48:22,462 - INFO - Starting data collection...
+2025-06-01 10:48:22,462 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748771302462
+2025-06-01 10:48:23,129 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:48:23,129 - INFO - Data collection completed successfully in 0.65 seconds
+2025-06-01 10:48:23,129 - INFO - Data collection successful
+2025-06-01 10:50:23,130 - INFO - Starting data collection...
+2025-06-01 10:50:23,131 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748771423131
+2025-06-01 10:50:23,674 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:50:23,674 - INFO - Data collection completed successfully in 0.53 seconds
+2025-06-01 10:50:23,674 - INFO - Data collection successful
+2025-06-01 10:52:23,675 - INFO - Starting data collection...
+2025-06-01 10:52:23,676 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748771543675
+2025-06-01 10:52:24,163 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:52:24,163 - INFO - Data collection completed successfully in 0.47 seconds
+2025-06-01 10:52:24,163 - INFO - Data collection successful
+2025-06-01 10:54:24,165 - INFO - Starting data collection...
+2025-06-01 10:54:24,165 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748771664165
+2025-06-01 10:54:24,759 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:54:24,759 - INFO - Data collection completed successfully in 0.58 seconds
+2025-06-01 10:54:24,759 - INFO - Data collection successful
+2025-06-01 10:54:24,759 - INFO - Collection #110 completed. Consecutive failures: 0
+2025-06-01 10:56:24,761 - INFO - Starting data collection...
+2025-06-01 10:56:24,761 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748771784761
+2025-06-01 10:56:25,305 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:56:25,306 - INFO - Data collection completed successfully in 0.53 seconds
+2025-06-01 10:56:25,306 - INFO - Data collection successful
+2025-06-01 10:58:25,307 - INFO - Starting data collection...
+2025-06-01 10:58:25,307 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748771905307
+2025-06-01 10:58:25,896 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 10:58:25,896 - INFO - Data collection completed successfully in 0.58 seconds
+2025-06-01 10:58:25,896 - INFO - Data collection successful
+2025-06-01 11:00:25,897 - INFO - Starting data collection...
+2025-06-01 11:00:25,897 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748772025897
+2025-06-01 11:00:26,477 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 11:00:26,477 - INFO - Data collection completed successfully in 0.57 seconds
+2025-06-01 11:00:26,477 - INFO - Data collection successful
+2025-06-01 11:02:26,478 - INFO - Starting data collection...
+2025-06-01 11:02:26,478 - INFO - Fetching data from: http://app.sunchaser.cloud/admin/tcu-overview?_=1748772146478
+2025-06-01 11:02:27,050 - INFO - Inserted 105 records successfully (excluded 1 AAA records)
+2025-06-01 11:02:27,050 - INFO - Data collection completed successfully in 0.56 seconds
+2025-06-01 11:02:27,050 - INFO - Data collection successful
