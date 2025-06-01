@@ -15,6 +15,7 @@ import schedule
 from typing import Dict, List
 import numpy as np
 
+# v1.1
 # Database Configuration
 DB_CONFIG = {
     'host': 'localhost',
@@ -567,6 +568,7 @@ def create_realtime_dashboard():
         # Project-wise summary
         st.subheader("📊 Project-wise Status")
 
+        # Aggregate data by project
         project_summary = latest_data.groupby('project').agg({
             'alarm': 'sum',
             'battery_alarm': 'sum',
@@ -581,74 +583,44 @@ def create_realtime_dashboard():
 
         # Build custom hover text for each project
         hover_text = [
-            f"Project: {row['project']}<br>"
-            f"🚨 Alarms: {row['alarm']}<br>"
-            f"⚠️ Warnings: {row['warning_count']}<br>"
-            f"🔋 Battery Alarm: {row['battery_alarm']}<br>"
-            f"✅ OK Status: {row['ok_status']}<br>"
-            f"📡 Comm Errors: {row['communication_error']}<br>"
-            f"🔕 Inactive: {row['inactive_tcu']}<br>"
+            f"<div style='font-size:16px;'>"
+            f"<b>📂 Project:</b> {row['project']}<br>"
+            f"🚨 <b>Alarms:</b> {row['alarm']}<br>"
+            f"⚠️ <b>Warnings:</b> {row['warning_count']}<br>"
+            f"🔋 <b>Battery Alarm:</b> {row['battery_alarm']}<br>"
+            f"✅ <b>OK Status:</b> {row['ok_status']}<br>"
+            f"📡 <b>Comm Errors:</b> {row['communication_error']}<br>"
+            f"🔕 <b>Inactive:</b> {row['inactive_tcu']}<br>"
+            f"</div>"
             for _, row in project_summary.iterrows()
         ]
 
+        # Create stacked bar chart
         fig = go.Figure()
 
-        fig.add_trace(go.Bar(
-            name='🚨 Alarms',
-            x=project_summary['project'],
-            y=project_summary['alarm'],
-            marker_color='#ff4444',
-            hovertext=hover_text,
-            hoverinfo='text'
-        ))
+        # Define trace configurations
+        traces = [
+            ('🚨 Alarms', 'alarm', '#ff4444', True),
+            ('⚠️ Warnings', 'warning_count', '#ffa500', True),
+            ('🔋 Battery Alarm', 'battery_alarm', '#ff8c00', True),
+            ('✅ OK Status', 'ok_status', '#28a745', False),
+            ('📡 Comm Errors', 'communication_error', '#6f42c1', True),
+            ('🔕 Inactive TCU', 'inactive_tcu', '#adb5bd', False)
+        ]
 
-        fig.add_trace(go.Bar(
-            name='⚠️ Warnings',
-            x=project_summary['project'],
-            y=project_summary['warning_count'],
-            marker_color='#ffa500',
-            hovertext=hover_text,
-            hoverinfo='text'
-        ))
+        # Add traces dynamically
+        for name, col, color, visible in traces:
+            fig.add_trace(go.Bar(
+                name=name,
+                x=project_summary['project'],
+                y=project_summary[col],
+                marker_color=color,
+                hovertext=hover_text,
+                hoverinfo='text',
+                visible=True if visible else 'legendonly'
+            ))
 
-        fig.add_trace(go.Bar(
-            name='🔋 Battery Alarm',
-            x=project_summary['project'],
-            y=project_summary['battery_alarm'],
-            marker_color='#ff8c00',
-            hovertext=hover_text,
-            hoverinfo='text'
-        ))
-
-        fig.add_trace(go.Bar(
-            name='✅ OK Status',
-            x=project_summary['project'],
-            y=project_summary['ok_status'],
-            marker_color='#28a745',
-            hovertext=hover_text,
-            hoverinfo='text',
-            visible='legendonly'
-        ))
-
-        fig.add_trace(go.Bar(
-            name='📡 Comm Errors',
-            x=project_summary['project'],
-            y=project_summary['communication_error'],
-            marker_color='#6f42c1',
-            hovertext=hover_text,
-            hoverinfo='text'
-        ))
-
-        fig.add_trace(go.Bar(
-            name='🔕 Inactive TCU',
-            x=project_summary['project'],
-            y=project_summary['inactive_tcu'],
-            marker_color='#adb5bd',
-            hovertext=hover_text,
-            hoverinfo='text',
-            visible='legendonly'
-        ))
-
+        # Configure layout
         fig.update_layout(
             title="📈 Status Distribution by Project",
             barmode='stack',
@@ -659,62 +631,101 @@ def create_realtime_dashboard():
             showlegend=True,
             xaxis=dict(
                 tickangle=45,
-                type='category'
+                type='category',
+                tickfont=dict(size=12)
+            ),
+            yaxis=dict(
+                tickfont=dict(size=12)
             )
         )
 
-        # Render chart
+        # Render the chart
         st.plotly_chart(fig, use_container_width=False)
+
 
         # NCU-wise detailed view
         st.subheader("🏭 NCU Details")
         
         # Create tabs for different projects
         projects = latest_data['project'].unique()
+
         if len(projects) > 0:
-            tabs = st.tabs([f"📂 {project}" for project in projects])
-            
-            for i, project in enumerate(projects):
-                with tabs[i]:
-                    project_data = latest_data[latest_data['project'] == project]
-                    
-                    # Create a responsive grid
-                    ncus = project_data['ncu'].unique()
-                    cols_per_row = min(3, len(ncus))
-                    
-                    for idx in range(0, len(ncus), cols_per_row):
-                        cols = st.columns(cols_per_row)
-                        for col_idx, ncu in enumerate(ncus[idx:idx+cols_per_row]):
-                            ncu_data = project_data[project_data['ncu'] == ncu].iloc[0]
-                            
-                            with cols[col_idx]:
-                                # Create status color based on conditions
-                                if ncu_data['alarm'] > 0:
-                                    status_color = "🔴"
-                                elif ncu_data['warning_count'] > 0:
-                                    status_color = "🟡"
-                                elif ncu_data['ok_status'] > 0:
-                                    status_color = "🟢"
-                                else:
-                                    status_color = "⚪"
-                                
-                                st.markdown(f"### {status_color} {ncu}")
-                                
-                                # Status metrics in compact format
-                                st.metric("🚨 Alarms", int(ncu_data['alarm']))
-                                st.metric("⚠️ Warnings", int(ncu_data['warning_count']))
-                                st.metric("✅ OK", int(ncu_data['ok_status']))
-                                
-                                # Wind data
-                                if ncu_data['max_wind_speed'] > 0 or ncu_data['avg_wind_speed'] > 0:
-                                    st.metric("💨 Max Wind", f"{ncu_data['max_wind_speed']:.1f}")
-                                    st.metric("🌬️ Avg Wind", f"{ncu_data['avg_wind_speed']:.1f}")
-                                
-                                st.markdown("---")
-        else:
-            st.warning("⚠️ No project data available")
-        
-        # Recent collection history
+            # Project selection dropdown
+            selected_project = st.selectbox(
+                "📂 Select Project",
+                projects,
+                index=0,
+                key="project_selector"
+            )
+
+            # Filter data for selected project
+            project_data = latest_data[latest_data['project'] == selected_project]
+            # Project title - Big and Clear
+            st.markdown(f"## Project Overview - {selected_project}")
+            st.markdown("---")
+
+            col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
+            with col1:
+                st.markdown(f"### 📂 {project_data['ncu'].nunique()}")
+                st.markdown("**NCU**")
+            with col2:
+                st.markdown(f"### 🚨 {int(project_data['alarm'].sum())}")
+                st.markdown("**Alarms**")
+            with col3:
+                st.markdown(f"### ⚠️ {int(project_data['warning_count'].sum())}")
+                st.markdown("**Warnings**")
+            with col4:
+                st.markdown(f"### ✅ {int(project_data['ok_status'].sum())}")
+                st.markdown("**OK Status**")
+            with col5:
+                st.markdown(f"### 📡 {int(project_data['communication_error'].sum())}")
+                st.markdown("**Comm Errors**")
+            with col6:
+                st.markdown(f"### ⛔ {int(project_data['inactive_tcu'].sum())}")
+                st.markdown("**Inactive**")
+            with col7:
+                st.markdown(f"### 🌬️ {project_data['max_wind_speed'].max():.1f}")
+                st.markdown("**Max Wind**")
+            st.markdown("---")   
+
+            # NCU Details - Simple and Large
+            for _, row in project_data.iterrows():
+                # NCU Name - Very Large
+                st.markdown(f"## 🔹 {row['ncu']}")
+                
+                # 6 Values in Large Text - Single Row
+                col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
+                
+                with col1:
+                    st.markdown(f"### 🚨 {int(row['alarm'])}")
+                    st.markdown("**Alarm**")
+                
+                with col2:
+                    st.markdown(f"### ⚠️ {int(row['warning_count'])}")
+                    st.markdown("**Warnings**")
+                
+                with col3:
+                    st.markdown(f"### 🔋 {int(row['ok_status'])}")
+                    st.markdown("**Ok**")
+
+                with col4:
+                    st.markdown(f"### 📡 {int(row['communication_error'])}")
+                    st.markdown("**Comm Error**")
+                
+                with col5:
+                    st.markdown(f"### 💤 {int(row['inactive_tcu'])}")
+                    st.markdown("**Inactive**")
+                
+                with col6:
+                    st.markdown(f"### 🌬️ {row['max_wind_speed']:.1f}")
+                    st.markdown("**Max Wind**")
+                
+                with col7:
+                    st.markdown(f"### 🌪️ {row['avg_wind_speed']:.1f}")
+                    st.markdown("**Avg Wind**")
+                
+                st.markdown("---")         
+       # Recent collection history
         with st.expander("📋 Recent Data Collections"):
             if stats['recent_history']:
                 history_df = pd.DataFrame(stats['recent_history'], 
