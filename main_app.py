@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime, timedelta
+import pytz
 import numpy as np
 from database_manager import DatabaseManager
 
@@ -34,7 +35,11 @@ def main():
     # Add some info in sidebar
     st.sidebar.markdown("---")
     st.sidebar.info(f"🕐 Current Time: {datetime.now().strftime('%H:%M:%S')}")
-    
+    # Get current time in Indian Standard Time
+    india_timezone = pytz.timezone('Asia/Kolkata')
+    india_time = datetime.now(india_timezone)
+
+    st.sidebar.info(f"🕐 Current Time (India): {india_time.strftime('%H:%M:%S')}")
     # Database connection status check
     try:
         db_manager = DatabaseManager()

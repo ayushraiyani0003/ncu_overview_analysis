@@ -9,6 +9,7 @@ import threading
 import sqlite3
 from typing import Dict, List
 import logging
+import pytz
 import traceback
 import signal
 import sys
@@ -655,60 +656,80 @@ class NCUDataCollectionService:
         except Exception as e:
             logger.error(f"Failed to initialize service: {e}")
             return False
-    
+        
+    def is_sleep_time_london(self):
+        """Check if current time is between 4:30 PM and 10:30 PM London time"""
+        try:
+            # Get current time in London timezone
+            london_tz = pytz.timezone('Europe/London')
+            london_time = datetime.now(london_tz)
+            
+            # Define sleep time range (3:30 PM to 10:30 PM)
+            sleep_start = london_time.replace(hour=16, minute=30, second=0, microsecond=0)
+            sleep_end = london_time.replace(hour=23, minute=00, second=0, microsecond=0)
+            
+            # Check if current time is within sleep period
+            return sleep_start <= london_time <= sleep_end
+        except Exception as e:
+            logger.error(f"Error checking London time: {e}")
+            return False
     def run_collection_loop(self):
         """Main collection loop that runs every 2 minutes"""
         logger.info("Starting data collection loop...")
-        
         while not self.stop_event.is_set():
             try:
+                # Check if it's sleep time in London (3:30 PM to 10:30 PM)
+                if self.is_sleep_time_london():
+                    logger.info("Sleep time for tracker (3:30 PM - 10:30 PM London time). Skipping data collection.")
+                    # Wait for next collection interval but check stop event every 10 seconds
+                    wait_seconds = COLLECTION_CONFIG['interval_minutes'] * 60
+                    for _ in range(wait_seconds // 10):
+                        if self.stop_event.wait(10):
+                            return
+                    continue
+                
                 # Check if too many consecutive failures
-                if (self.data_collector.consecutive_failures >= 
+                if (self.data_collector.consecutive_failures >=
                     self.data_collector.max_consecutive_failures):
-                    
                     logger.error(f"Too many consecutive failures ({self.data_collector.consecutive_failures})")
                     logger.info("Waiting 10 minutes before resuming...")
-                    
                     # Wait 10 minutes but check stop event every 30 seconds
                     for _ in range(20):  # 20 * 30 = 600 seconds = 10 minutes
                         if self.stop_event.wait(30):
                             return
-                    
                     # Reset failure count and try again
                     self.data_collector.consecutive_failures = 0
                     logger.info("Resuming data collection after failure timeout")
                 
                 # Collect data
                 success = self.data_collector.collect_data()
-                
                 if success:
                     logger.info("Data collection successful")
                 else:
                     logger.warning("Data collection failed")
-                    
+                
                 # Log status every 10 collections (20 minutes)
                 if hasattr(self, 'collection_count'):
                     self.collection_count += 1
                 else:
                     self.collection_count = 1
-                    
+                
                 if self.collection_count % 10 == 0:
                     logger.info(f"Collection #{self.collection_count} completed. "
-                               f"Consecutive failures: {self.data_collector.consecutive_failures}")
+                            f"Consecutive failures: {self.data_collector.consecutive_failures}")
                 
                 # Wait for next collection (2 minutes) but check stop event every 10 seconds
                 wait_seconds = COLLECTION_CONFIG['interval_minutes'] * 60
                 for _ in range(wait_seconds // 10):
                     if self.stop_event.wait(10):
                         return
-                
+                        
             except KeyboardInterrupt:
                 logger.info("Received keyboard interrupt, stopping...")
                 break
             except Exception as e:
                 logger.error(f"Unexpected error in collection loop: {e}")
                 logger.error(f"Traceback: {traceback.format_exc()}")
-                
                 # Wait before retrying
                 if not self.stop_event.wait(60):
                     continue
