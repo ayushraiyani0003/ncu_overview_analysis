@@ -149,6 +149,45 @@ def get_analysis_data(db_manager, start_date, end_date):
         st.error(f"Error fetching data: {e}")
         return pd.DataFrame()
 
+def get_sorted_ncus_with_values(data, column_name, project=None):
+    """Get NCUs sorted by max values with display format"""
+    if project:
+        filtered_data = data[data['project'] == project]
+    else:
+        filtered_data = data
+    
+    # Group by NCU and get max values
+    ncu_values = filtered_data.groupby(['project', 'ncu']).agg({
+        column_name: 'max'
+    }).reset_index()
+    
+    # Sort by column value in descending order (highest first)
+    ncu_values = ncu_values.sort_values(column_name, ascending=False)
+    
+    # Create display format and options list
+    ncu_options = []
+    ncu_mapping = {}
+    
+    for _, row in ncu_values.iterrows():
+        ncu_name = row['ncu']
+        max_value = row[column_name]
+        project_name = row['project']
+        
+        # Format display based on column type
+        if column_name in ["max_wind_speed", "avg_wind_speed"]:
+            display_text = f"{ncu_name} (Max: {max_value:.1f} m/s)"
+        else:
+            display_text = f"{ncu_name} (Max: {int(max_value)})"
+        
+        ncu_options.append(display_text)
+        ncu_mapping[display_text] = {
+            'ncu': ncu_name,
+            'project': project_name,
+            'max_value': max_value
+        }
+    
+    return ncu_options, ncu_mapping
+
 def process_analysis_tab(data, column_name, analysis_type, chart_type, time_agg, tab_name):
     """Process each analysis tab with enhanced functionality"""
     
@@ -191,39 +230,66 @@ def process_analysis_tab(data, column_name, analysis_type, chart_type, time_agg,
             
             with col2:
                 if selected_project:
-                    project_ncus = sorted(data[data['project'] == selected_project]['ncu'].unique())
-                    # Get top NCUs for the selected project
-                    project_data = data[data['project'] == selected_project]
-                    top_project_ncus = get_top_ncus_for_project(project_data, column_name)
+                    # Get sorted NCUs for the selected project with max values
+                    ncu_options, ncu_mapping = get_sorted_ncus_with_values(data, column_name, selected_project)
                     
-                    default_ncu = top_project_ncus['ncu'].iloc[0] if not top_project_ncus.empty else project_ncus[0] if len(project_ncus) > 0 else None
-                    
-                    selected_ncu = st.selectbox(
-                        "🎛️ Select NCU",
-                        options=project_ncus,
-                        index=list(project_ncus).index(default_ncu) if default_ncu in project_ncus else 0,
-                        key=f"ncu_selector_{column_name}"
-                    )
+                    if ncu_options:
+                        # Set default based on top NCU for the project
+                        default_index = 0  # Always select the top NCU (highest value)
+                        
+                        selected_ncu_display = st.selectbox(
+                            f"🎛️ Select NCU (Sorted by {tab_name})",
+                            options=ncu_options,
+                            index=default_index,
+                            key=f"ncu_selector_{column_name}",
+                            help="NCUs are sorted by highest to lowest values"
+                        )
+                        
+                        # Extract actual NCU name from mapping
+                        selected_ncu = ncu_mapping[selected_ncu_display]['ncu']
+                    else:
+                        st.warning("No NCUs found for selected project")
+                        return
         else:
-            # For NCU-wise analysis - show ALL NCUs, not just top 5
-            all_ncus = sorted(data['ncu'].unique())
+            # For NCU-wise analysis - show ALL NCUs sorted by values
+            ncu_options, ncu_mapping = get_sorted_ncus_with_values(data, column_name)
             
-            # Set default selection based on card click or first from top data
-            if selected_item:
-                default_index = all_ncus.index(selected_item) if selected_item in all_ncus else 0
+            if ncu_options:
+                # Set default selection based on card click or highest value NCU
+                default_index = 0
+                if selected_item:
+                    # Find the selected NCU in options
+                    for i, option in enumerate(ncu_options):
+                        if ncu_mapping[option]['ncu'] == selected_item:
+                            default_index = i
+                            break
+                
+                selected_ncu_display = st.selectbox(
+                    f"🎛️ Select NCU (Sorted by {tab_name})",
+                    options=ncu_options,
+                    index=default_index,
+                    key=f"ncu_selector_ncuwise_{column_name}",
+                    help="NCUs are sorted by highest to lowest values"
+                )
+                
+                # Extract actual NCU name and project from mapping
+                selected_ncu = ncu_mapping[selected_ncu_display]['ncu']
+                selected_project = ncu_mapping[selected_ncu_display]['project']
             else:
-                default_index = all_ncus.index(top_data['ncu'].iloc[0]) if not top_data.empty else 0
-            
-            selected_ncu = st.selectbox(
-                "🎛️ Select NCU (All Available)",
-                options=all_ncus,
-                index=default_index,
-                key=f"ncu_selector_ncuwise_{column_name}"
-            )
-            selected_project = data[data['ncu'] == selected_ncu]['project'].iloc[0]
+                st.warning("No NCUs found")
+                return
         
         # Enhanced Charts Section
         st.subheader(f"📊 {chart_type} Analysis - {tab_name} ({selected_project} - {selected_ncu})")
+        
+        # Display current max value for selected NCU
+        current_max = ncu_mapping[selected_ncu_display]['max_value'] if analysis_type == "NCU-wise" else \
+                     data[(data['ncu'] == selected_ncu) & (data['project'] == selected_project)][column_name].max()
+        
+        if column_name in ["max_wind_speed", "avg_wind_speed"]:
+            st.info(f"📊 Current Max {tab_name} for {selected_ncu}: **{current_max:.1f} m/s**")
+        else:
+            st.info(f"📊 Current Max {tab_name} for {selected_ncu}: **{int(current_max)}**")
         
         if chart_type == "Time Series":
             create_time_series_chart(data, selected_ncu, selected_project, column_name, time_agg)

@@ -8,9 +8,9 @@ import numpy as np
 from database_manager import DatabaseManager
 
 # Import your existing functions
-from collection_stats import create_collection_stats_page  # Assuming your first file is saved as paste.py
-from realtime_dashboard import create_realtime_dashboard    # Assuming your second file is saved as paste2.py
-from deep_analysis import create_deep_analysis_dashboard
+from page.collection_stats import create_collection_stats_page  # Assuming your first file is saved as paste.py
+from page.realtime_dashboard import create_realtime_dashboard    # Assuming your second file is saved as paste2.py
+from page.deep_analysis import create_deep_analysis_dashboard
 def main():
     """Main application with navigation"""
     
@@ -19,7 +19,7 @@ def main():
         page_title="NCU Monitoring System",
         page_icon="📊",
         layout="wide",
-        initial_sidebar_state="expanded"
+        initial_sidebar_state="expanded",
     )
     
     # Sidebar navigation
@@ -59,3 +59,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+#in this for navigation disp-ly three button, and this is current replace the realtime page data with other so i get lag, i need a pages so no contant replace i need page change.

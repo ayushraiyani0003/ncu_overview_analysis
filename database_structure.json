@@ -1,0 +1,4564 @@
+{
+  "timestamp": "2025-06-03T04:48:00.182735",
+  "server_info": {
+    "host": "localhost",
+    "port": 3306,
+    "user": "root"
+  },
+  "config": {
+    "system_databases_excluded": [
+      "information_schema",
+      "performance_schema",
+      "mysql",
+      "sys"
+    ],
+    "include_data_preview": false
+  },
+  "databases": {
+    "EmployeeAttendance": {
+      "table_count": 14,
+      "tables": {
+        "Attendance": {
+          "row_count": 43188,
+          "size_mb": "4.03",
+          "column_count": 9,
+          "columns": [
+            {
+              "name": "attendance_id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "employee_id",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "attendance_date",
+              "type": "date",
+              "null": "YES",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "shift_type",
+              "type": "varchar(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "network_hours",
+              "type": "float",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "overtime_hours",
+              "type": "float",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "comment",
+              "type": "text",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "Audit": {
+          "row_count": 28682,
+          "size_mb": "6.52",
+          "column_count": 7,
+          "columns": [
+            {
+              "name": "audit_id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "table_name",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "action",
+              "type": "varchar(50)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "changed_by",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "changed_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "old_data",
+              "type": "longtext",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "new_data",
+              "type": "longtext",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "HeaderMessages": {
+          "row_count": 2,
+          "size_mb": "0.02",
+          "column_count": 5,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "message",
+              "type": "text",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "active",
+              "type": "tinyint(1)",
+              "null": "YES",
+              "key": "",
+              "default": "1",
+              "extra": ""
+            },
+            {
+              "name": "createdAt",
+              "type": "datetime",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updatedAt",
+              "type": "datetime",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "PopupMessages": {
+          "row_count": 3,
+          "size_mb": "0.02",
+          "column_count": 8,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "title",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "message",
+              "type": "text",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "startTime",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "endTime",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "active",
+              "type": "tinyint(1)",
+              "null": "YES",
+              "key": "",
+              "default": "1",
+              "extra": ""
+            },
+            {
+              "name": "createdAt",
+              "type": "datetime",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updatedAt",
+              "type": "datetime",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "attendance_change_logs": {
+          "row_count": 3951,
+          "size_mb": "1.52",
+          "column_count": 15,
+          "columns": [
+            {
+              "name": "log_id",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "employee_id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "attendance_date",
+              "type": "date",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "update_datetime",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "field",
+              "type": "varchar(50)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "new_value",
+              "type": "text",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "old_value",
+              "type": "text",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "changed_by_id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "changed_by",
+              "type": "varchar(100)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "employee_punch_code",
+              "type": "varchar(50)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "employee_name",
+              "type": "varchar(100)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "employee_department",
+              "type": "text",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "employee_reporting_group",
+              "type": "text",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "attendance_date_lock_status": {
+          "row_count": 1216,
+          "size_mb": "0.20",
+          "column_count": 7,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "reporting_group_name",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "attendance_date",
+              "type": "date",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "status",
+              "type": "enum('locked','unlocked')",
+              "null": "YES",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "locked_by",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "attendance_unlock_requests": {
+          "row_count": 53,
+          "size_mb": "0.02",
+          "column_count": 11,
+          "columns": [
+            {
+              "name": "request_id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "requested_by",
+              "type": "varchar(100)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "requested_by_id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "requested_start_date",
+              "type": "date",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "requested_end_date",
+              "type": "date",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "request_reason",
+              "type": "text",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "status",
+              "type": "varchar(20)",
+              "null": "NO",
+              "key": "",
+              "default": "pending",
+              "extra": ""
+            },
+            {
+              "name": "status_by",
+              "type": "varchar(100)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "requested_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "departments": {
+          "row_count": 34,
+          "size_mb": "0.02",
+          "column_count": 4,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "name",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "createdAt",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updatedAt",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "designations": {
+          "row_count": 20,
+          "size_mb": "0.02",
+          "column_count": 4,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "designation_name",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "createdAt",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updatedAt",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "employees": {
+          "row_count": 934,
+          "size_mb": "0.23",
+          "column_count": 16,
+          "columns": [
+            {
+              "name": "employee_id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "name",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "department",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "punch_code",
+              "type": "varchar(50)",
+              "null": "YES",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "designation",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "reporting_group",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "net_hr",
+              "type": "float",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "week_off",
+              "type": "varchar(100)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "resign_date",
+              "type": "datetime",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "status",
+              "type": "enum('active','inactive','resigned','on_leave')",
+              "null": "NO",
+              "key": "",
+              "default": "active",
+              "extra": ""
+            },
+            {
+              "name": "sections",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "branch",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "mobile_number",
+              "type": "varchar(20)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "whats_app_number",
+              "type": "varchar(20)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "metrics": {
+          "row_count": 2294,
+          "size_mb": "4.72",
+          "column_count": 7,
+          "columns": [
+            {
+              "name": "metric_id",
+              "type": "varchar(36)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "punch_code",
+              "type": "varchar(30)",
+              "null": "NO",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "month_year",
+              "type": "varchar(7)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "network_hours",
+              "type": "text",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "overtime_hours",
+              "type": "text",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "reporting_group": {
+          "row_count": 28,
+          "size_mb": "0.02",
+          "column_count": 4,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "groupname",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "sessions": {
+          "row_count": 1,
+          "size_mb": "0.11",
+          "column_count": 8,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "userId",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "sessionId",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "UNI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "deviceId",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "lastActive",
+              "type": "datetime",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "isActive",
+              "type": "tinyint(1)",
+              "null": "YES",
+              "key": "",
+              "default": "1",
+              "extra": ""
+            },
+            {
+              "name": "createdAt",
+              "type": "datetime",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updatedAt",
+              "type": "datetime",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "users": {
+          "row_count": 32,
+          "size_mb": "0.02",
+          "column_count": 15,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "username",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "name",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "phone_no",
+              "type": "varchar(15)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "department",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "designation",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "user_role",
+              "type": "enum('admin','user')",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "last_login",
+              "type": "datetime",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "is_active",
+              "type": "tinyint(1)",
+              "null": "YES",
+              "key": "",
+              "default": "1",
+              "extra": ""
+            },
+            {
+              "name": "password",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "createdAt",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updatedAt",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "reporting_group",
+              "type": "longtext",
+              "null": "YES",
+              "key": "",
+              "default": "'[]'",
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "datetime",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        }
+      },
+      "total_rows": 80438,
+      "total_size_mb": "17.47"
+    },
+    "hr_central_db": {
+      "table_count": 13,
+      "tables": {
+        "ApplicantEducations": {
+          "row_count": 0,
+          "size_mb": "0.06",
+          "column_count": 12,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "applicant_id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "education_training",
+              "type": "varchar(200)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "institution",
+              "type": "varchar(200)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "degree_diploma",
+              "type": "varchar(200)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "start_year",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "end_year",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "is_current_study",
+              "type": "tinyint(1)",
+              "null": "NO",
+              "key": "",
+              "default": "0",
+              "extra": ""
+            },
+            {
+              "name": "result",
+              "type": "varchar(50)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "remarks",
+              "type": "text",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "ApplicantTrackings": {
+          "row_count": 0,
+          "size_mb": "0.08",
+          "column_count": 22,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "position_applied",
+              "type": "varchar(200)",
+              "null": "NO",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "application_date",
+              "type": "date",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "first_name",
+              "type": "varchar(100)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "father_name",
+              "type": "varchar(100)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "surname",
+              "type": "varchar(100)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "address",
+              "type": "text",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "mobile_no_1",
+              "type": "varchar(15)",
+              "null": "NO",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "whatsapp_no",
+              "type": "varchar(15)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "date_of_birth",
+              "type": "date",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "department",
+              "type": "varchar(100)",
+              "null": "NO",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "cast",
+              "type": "varchar(50)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "marital_status",
+              "type": "enum('married','unmarried')",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "gender",
+              "type": "enum('male','female')",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "required_notice_period",
+              "type": "varchar(50)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "expected_salary",
+              "type": "decimal(10,2)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "reference",
+              "type": "varchar(200)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "reference_relation",
+              "type": "varchar(100)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "defence_salary",
+              "type": "decimal(10,2)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "status",
+              "type": "enum('pending','shortlisted','rejected','hired')",
+              "null": "NO",
+              "key": "MUL",
+              "default": "pending",
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "ApplicantWorkHistories": {
+          "row_count": 0,
+          "size_mb": "0.08",
+          "column_count": 12,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "applicant_id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "job_post",
+              "type": "varchar(200)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "company_name",
+              "type": "varchar(200)",
+              "null": "NO",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "start_month_year",
+              "type": "varchar(20)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "end_month_year",
+              "type": "varchar(20)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "salary",
+              "type": "decimal(10,2)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "reason_for_leave",
+              "type": "text",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "remarks",
+              "type": "text",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "is_current_work",
+              "type": "tinyint(1)",
+              "null": "NO",
+              "key": "MUL",
+              "default": "0",
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "CompanyStructures": {
+          "row_count": 0,
+          "size_mb": "0.08",
+          "column_count": 11,
+          "columns": [
+            {
+              "name": "id",
+              "type": "char(36)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "int_id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "UNI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "name",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "details",
+              "type": "text",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "address",
+              "type": "text",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "type",
+              "type": "enum('company','head office','regional office','department','unit','subUnit','other')",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "country",
+              "type": "varchar(100)",
+              "null": "NO",
+              "key": "",
+              "default": "India",
+              "extra": ""
+            },
+            {
+              "name": "parent_id",
+              "type": "char(36)",
+              "null": "YES",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "head",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "Designations": {
+          "row_count": 0,
+          "size_mb": "0.05",
+          "column_count": 4,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "name",
+              "type": "varchar(150)",
+              "null": "NO",
+              "key": "UNI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "EducationLevels": {
+          "row_count": 0,
+          "size_mb": "0.05",
+          "column_count": 4,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "name",
+              "type": "varchar(100)",
+              "null": "NO",
+              "key": "UNI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "EmployeeTypes": {
+          "row_count": 0,
+          "size_mb": "0.05",
+          "column_count": 4,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "name",
+              "type": "varchar(100)",
+              "null": "NO",
+              "key": "UNI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "ExperienceLevels": {
+          "row_count": 0,
+          "size_mb": "0.05",
+          "column_count": 4,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "name",
+              "type": "varchar(100)",
+              "null": "NO",
+              "key": "UNI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "HiringSources": {
+          "row_count": 0,
+          "size_mb": "0.05",
+          "column_count": 4,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "name",
+              "type": "varchar(100)",
+              "null": "NO",
+              "key": "UNI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "JobLocations": {
+          "row_count": 0,
+          "size_mb": "0.05",
+          "column_count": 4,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "name",
+              "type": "varchar(200)",
+              "null": "NO",
+              "key": "UNI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "ManPowerRequisition": {
+          "row_count": 0,
+          "size_mb": "0.14",
+          "column_count": 26,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "request_id",
+              "type": "varchar(15)",
+              "null": "NO",
+              "key": "UNI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "requested_by",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "requirement_for_department",
+              "type": "char(36)",
+              "null": "NO",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "requirement_for_designation",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "number_of_positions",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "requirement_for_category",
+              "type": "enum('permanent','technical','fixed_term')",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "requirement_type",
+              "type": "enum('replacement','additional','budgeted','non_budgeted')",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "expected_date_of_joining",
+              "type": "date",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "experience_required",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "",
+              "default": "0",
+              "extra": ""
+            },
+            {
+              "name": "job_description",
+              "type": "text",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "agreed_by",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "approved_by",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "on_hold_by",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "requested_date",
+              "type": "date",
+              "null": "NO",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "request_completed_date",
+              "type": "date",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "date_of_joining",
+              "type": "date",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "approved_date",
+              "type": "date",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "agreed_date",
+              "type": "date",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "approval_status",
+              "type": "enum('approved','pending','rejected','on_hold')",
+              "null": "NO",
+              "key": "MUL",
+              "default": "pending",
+              "extra": ""
+            },
+            {
+              "name": "requisition_status",
+              "type": "enum('pending','in_process','on_hold','completed','cancelled')",
+              "null": "NO",
+              "key": "MUL",
+              "default": "pending",
+              "extra": ""
+            },
+            {
+              "name": "last_changed_by",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "is_active",
+              "type": "tinyint(1)",
+              "null": "NO",
+              "key": "",
+              "default": "1",
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "deleted_at",
+              "type": "datetime",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "Skills": {
+          "row_count": 0,
+          "size_mb": "0.05",
+          "column_count": 4,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "name",
+              "type": "varchar(100)",
+              "null": "NO",
+              "key": "UNI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "WorkShifts": {
+          "row_count": 0,
+          "size_mb": "0.05",
+          "column_count": 6,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "name",
+              "type": "varchar(100)",
+              "null": "NO",
+              "key": "UNI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "start_time",
+              "type": "time",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "end_time",
+              "type": "time",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        }
+      },
+      "total_rows": 0,
+      "total_size_mb": "0.84"
+    },
+    "jsm_t1_1937": {
+      "table_count": 3,
+      "tables": {
+        "communication_error": {
+          "row_count": 86,
+          "size_mb": "0.06",
+          "column_count": 9,
+          "columns": [
+            {
+              "name": "id",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "local_device_id",
+              "type": "bigint(20) unsigned",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "device_id",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "value",
+              "type": "text",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "tcu",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "start_time",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "end_time",
+              "type": "datetime",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "timestamp",
+              "null": "YES",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "timestamp",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "local_devices": {
+          "row_count": 1,
+          "size_mb": "0.02",
+          "column_count": 14,
+          "columns": [
+            {
+              "name": "id",
+              "type": "bigint(20) unsigned",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "device_id",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "device_key",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "value",
+              "type": "longtext",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "ok_status",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "alarm",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "manual_mode",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "iot_mode",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "total_tcu",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "status",
+              "type": "enum('active','inactive')",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "down_commad_time",
+              "type": "datetime",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "active_system_status",
+              "type": "enum('pending','in process','complete')",
+              "null": "NO",
+              "key": "",
+              "default": "pending",
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "timestamp",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "timestamp",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "local_devices_data": {
+          "row_count": 14446,
+          "size_mb": "20.70",
+          "column_count": 18,
+          "columns": [
+            {
+              "name": "id",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "local_device_id",
+              "type": "bigint(20)",
+              "null": "NO",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "device_id",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "device_key",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "value",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "rows",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "status_name",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "ok_status",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "alarm",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "manual_mode",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "iot_mode",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "wind_speed",
+              "type": "double(8,2)",
+              "null": "NO",
+              "key": "",
+              "default": "0.00",
+              "extra": ""
+            },
+            {
+              "name": "wind_direction",
+              "type": "double(8,2)",
+              "null": "NO",
+              "key": "",
+              "default": "0.00",
+              "extra": ""
+            },
+            {
+              "name": "actual_angle",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "target_angle",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "battery_percentage",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "timestamp",
+              "null": "YES",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "timestamp",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        }
+      },
+      "total_rows": 14533,
+      "total_size_mb": "20.78"
+    },
+    "ncu_overview": {
+      "table_count": 2,
+      "tables": {
+        "data_collection_tracking": {
+          "row_count": 3940,
+          "size_mb": "0.33",
+          "column_count": 9,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "collection_time",
+              "type": "datetime",
+              "null": "YES",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "timestamp",
+              "type": "bigint(20)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "records_collected",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "records_inserted",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "excluded_records",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "success",
+              "type": "tinyint(1)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "error_message",
+              "type": "text",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "collection_duration",
+              "type": "decimal(10,3)",
+              "null": "YES",
+              "key": "",
+              "default": "0.000",
+              "extra": ""
+            }
+          ]
+        },
+        "ncu_data": {
+          "row_count": 416777,
+          "size_mb": "390.92",
+          "column_count": 19,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "timestamp",
+              "type": "bigint(20)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "date_time",
+              "type": "datetime",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "project",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "ncu",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "user_id",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "ncu_id",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "alarm",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "battery_alarm",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "battery_warning",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "warning_count",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "master_mode",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "manual_mode",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "ok_status",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "communication_error",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "inactive_tcu",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "max_wind_speed",
+              "type": "decimal(10,2)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "avg_wind_speed",
+              "type": "decimal(10,2)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "raw_data",
+              "type": "text",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        }
+      },
+      "total_rows": 420717,
+      "total_size_mb": "391.25"
+    },
+    "phpmyadmin": {
+      "table_count": 19,
+      "tables": {
+        "pma__bookmark": {
+          "row_count": 0,
+          "size_mb": "0.02",
+          "column_count": 5,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "dbase",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "user",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "label",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "query",
+              "type": "text",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "pma__central_columns": {
+          "row_count": 0,
+          "size_mb": "0.02",
+          "column_count": 8,
+          "columns": [
+            {
+              "name": "db_name",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "col_name",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "col_type",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "col_length",
+              "type": "text",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "col_collation",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "col_isNull",
+              "type": "tinyint(1)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "col_extra",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "col_default",
+              "type": "text",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "pma__column_info": {
+          "row_count": 0,
+          "size_mb": "0.03",
+          "column_count": 10,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(5) unsigned",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "db_name",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "MUL",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "table_name",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "column_name",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "comment",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "mimetype",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "transformation",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "transformation_options",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "input_transformation",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "input_transformation_options",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": "",
+              "extra": ""
+            }
+          ]
+        },
+        "pma__designer_settings": {
+          "row_count": 0,
+          "size_mb": "0.02",
+          "column_count": 2,
+          "columns": [
+            {
+              "name": "username",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "settings_data",
+              "type": "text",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "pma__export_templates": {
+          "row_count": 0,
+          "size_mb": "0.03",
+          "column_count": 5,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(5) unsigned",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "username",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "MUL",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "export_type",
+              "type": "varchar(10)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "template_name",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "template_data",
+              "type": "text",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "pma__favorite": {
+          "row_count": 0,
+          "size_mb": "0.02",
+          "column_count": 2,
+          "columns": [
+            {
+              "name": "username",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "tables",
+              "type": "text",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "pma__history": {
+          "row_count": 0,
+          "size_mb": "0.03",
+          "column_count": 6,
+          "columns": [
+            {
+              "name": "id",
+              "type": "bigint(20) unsigned",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "username",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "MUL",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "db",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "table",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "timevalue",
+              "type": "timestamp",
+              "null": "NO",
+              "key": "",
+              "default": "current_timestamp()",
+              "extra": ""
+            },
+            {
+              "name": "sqlquery",
+              "type": "text",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "pma__navigationhiding": {
+          "row_count": 0,
+          "size_mb": "0.02",
+          "column_count": 5,
+          "columns": [
+            {
+              "name": "username",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "item_name",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "item_type",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "db_name",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "table_name",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "pma__pdf_pages": {
+          "row_count": 0,
+          "size_mb": "0.03",
+          "column_count": 3,
+          "columns": [
+            {
+              "name": "db_name",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "MUL",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "page_nr",
+              "type": "int(10) unsigned",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "page_descr",
+              "type": "varchar(50)",
+              "null": "NO",
+              "key": "",
+              "default": "",
+              "extra": ""
+            }
+          ]
+        },
+        "pma__recent": {
+          "row_count": 1,
+          "size_mb": "0.02",
+          "column_count": 2,
+          "columns": [
+            {
+              "name": "username",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "tables",
+              "type": "text",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "pma__relation": {
+          "row_count": 0,
+          "size_mb": "0.03",
+          "column_count": 6,
+          "columns": [
+            {
+              "name": "master_db",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "master_table",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "master_field",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "foreign_db",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "MUL",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "foreign_table",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "foreign_field",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "",
+              "default": "",
+              "extra": ""
+            }
+          ]
+        },
+        "pma__savedsearches": {
+          "row_count": 0,
+          "size_mb": "0.03",
+          "column_count": 5,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(5) unsigned",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "username",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "MUL",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "db_name",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "search_name",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "search_data",
+              "type": "text",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "pma__table_coords": {
+          "row_count": 0,
+          "size_mb": "0.02",
+          "column_count": 5,
+          "columns": [
+            {
+              "name": "db_name",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "table_name",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "pdf_page_number",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": "0",
+              "extra": ""
+            },
+            {
+              "name": "x",
+              "type": "float unsigned",
+              "null": "NO",
+              "key": "",
+              "default": "0",
+              "extra": ""
+            },
+            {
+              "name": "y",
+              "type": "float unsigned",
+              "null": "NO",
+              "key": "",
+              "default": "0",
+              "extra": ""
+            }
+          ]
+        },
+        "pma__table_info": {
+          "row_count": 0,
+          "size_mb": "0.02",
+          "column_count": 3,
+          "columns": [
+            {
+              "name": "db_name",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "table_name",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": "",
+              "extra": ""
+            },
+            {
+              "name": "display_field",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "",
+              "default": "",
+              "extra": ""
+            }
+          ]
+        },
+        "pma__table_uiprefs": {
+          "row_count": 7,
+          "size_mb": "0.02",
+          "column_count": 5,
+          "columns": [
+            {
+              "name": "username",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "db_name",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "table_name",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "prefs",
+              "type": "text",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "last_update",
+              "type": "timestamp",
+              "null": "NO",
+              "key": "",
+              "default": "current_timestamp()",
+              "extra": "on update current_timestamp()"
+            }
+          ]
+        },
+        "pma__tracking": {
+          "row_count": 1,
+          "size_mb": "0.02",
+          "column_count": 10,
+          "columns": [
+            {
+              "name": "db_name",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "table_name",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "version",
+              "type": "int(10) unsigned",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "date_created",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "date_updated",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "schema_snapshot",
+              "type": "text",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "schema_sql",
+              "type": "text",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "data_sql",
+              "type": "longtext",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "tracking",
+              "type": "set('UPDATE','REPLACE','INSERT','DELETE','TRUNCATE','CREATE DATABASE','ALTER DATABASE','DROP DATABASE','CREATE TABLE','ALTER TABLE','RENAME TABLE','DROP TABLE','CREATE INDEX','DROP INDEX','CREATE VIEW','ALTER VIEW','DROP VIEW')",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "tracking_active",
+              "type": "int(1) unsigned",
+              "null": "NO",
+              "key": "",
+              "default": "1",
+              "extra": ""
+            }
+          ]
+        },
+        "pma__userconfig": {
+          "row_count": 1,
+          "size_mb": "0.02",
+          "column_count": 3,
+          "columns": [
+            {
+              "name": "username",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "timevalue",
+              "type": "timestamp",
+              "null": "NO",
+              "key": "",
+              "default": "current_timestamp()",
+              "extra": "on update current_timestamp()"
+            },
+            {
+              "name": "config_data",
+              "type": "text",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "pma__usergroups": {
+          "row_count": 0,
+          "size_mb": "0.02",
+          "column_count": 3,
+          "columns": [
+            {
+              "name": "usergroup",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "tab",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "allowed",
+              "type": "enum('Y','N')",
+              "null": "NO",
+              "key": "PRI",
+              "default": "N",
+              "extra": ""
+            }
+          ]
+        },
+        "pma__users": {
+          "row_count": 0,
+          "size_mb": "0.02",
+          "column_count": 2,
+          "columns": [
+            {
+              "name": "username",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "usergroup",
+              "type": "varchar(64)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        }
+      },
+      "total_rows": 10,
+      "total_size_mb": "0.44"
+    },
+    "sunchaser_db": {
+      "table_count": 5,
+      "tables": {
+        "garbage_data": {
+          "row_count": 2387271,
+          "size_mb": "595.97",
+          "column_count": 6,
+          "columns": [
+            {
+              "name": "id",
+              "type": "char(36)",
+              "null": "NO",
+              "key": "PRI",
+              "default": "uuid()",
+              "extra": ""
+            },
+            {
+              "name": "ncu_name",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "garbage_type",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "value",
+              "type": "text",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "timestamp",
+              "null": "NO",
+              "key": "",
+              "default": "current_timestamp()",
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "timestamp",
+              "null": "NO",
+              "key": "",
+              "default": "current_timestamp()",
+              "extra": "on update current_timestamp()"
+            }
+          ]
+        },
+        "ncu_data": {
+          "row_count": 0,
+          "size_mb": "0.02",
+          "column_count": 13,
+          "columns": [
+            {
+              "name": "id",
+              "type": "char(36)",
+              "null": "NO",
+              "key": "PRI",
+              "default": "uuid()",
+              "extra": ""
+            },
+            {
+              "name": "project_name",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "ncu_id",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "ncu_number",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "current_status",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "down_command",
+              "type": "timestamp",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "last_alarm",
+              "type": "timestamp",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "last_manual",
+              "type": "timestamp",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "last_iot_mode",
+              "type": "timestamp",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "last_ok",
+              "type": "timestamp",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "last_communication_error",
+              "type": "timestamp",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "timestamp",
+              "null": "NO",
+              "key": "",
+              "default": "current_timestamp()",
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "timestamp",
+              "null": "NO",
+              "key": "",
+              "default": "current_timestamp()",
+              "extra": "on update current_timestamp()"
+            }
+          ]
+        },
+        "project_data": {
+          "row_count": 0,
+          "size_mb": "0.02",
+          "column_count": 14,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "project_name",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "project_number",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "power_capacity",
+              "type": "decimal(10,2)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "tracker_type",
+              "type": "varchar(100)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "total_ncu",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": "0",
+              "extra": ""
+            },
+            {
+              "name": "location",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "project_start_date",
+              "type": "date",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "client_name",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "remarks",
+              "type": "text",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "project_image",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "ncu_prefix",
+              "type": "varchar(50)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "timestamp",
+              "null": "NO",
+              "key": "",
+              "default": "current_timestamp()",
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "timestamp",
+              "null": "NO",
+              "key": "",
+              "default": "current_timestamp()",
+              "extra": "on update current_timestamp()"
+            }
+          ]
+        },
+        "tcu_data": {
+          "row_count": 33038744,
+          "size_mb": "6866.86",
+          "column_count": 21,
+          "columns": [
+            {
+              "name": "id",
+              "type": "char(36)",
+              "null": "NO",
+              "key": "PRI",
+              "default": "uuid()",
+              "extra": ""
+            },
+            {
+              "name": "ncu_id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "ncu_name",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "tcu_number",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "tcu_status",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "atcual_angle",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "target_angle",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "date",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "time",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "time_dif",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "battery_percentage",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "other_details",
+              "type": "text",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "temperature",
+              "type": "float",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "humidity",
+              "type": "float",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "wind_speed",
+              "type": "float",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "wind_direction",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "rain",
+              "type": "float",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "sunirradiance",
+              "type": "float",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "status",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "timestamp",
+              "null": "NO",
+              "key": "",
+              "default": "current_timestamp()",
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "timestamp",
+              "null": "NO",
+              "key": "",
+              "default": "current_timestamp()",
+              "extra": "on update current_timestamp()"
+            }
+          ]
+        },
+        "user_data": {
+          "row_count": 1,
+          "size_mb": "0.03",
+          "column_count": 11,
+          "columns": [
+            {
+              "name": "id",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "PRI",
+              "default": null,
+              "extra": "auto_increment"
+            },
+            {
+              "name": "username",
+              "type": "varchar(50)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "email",
+              "type": "varchar(100)",
+              "null": "NO",
+              "key": "UNI",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "user_role",
+              "type": "enum('admin','user','manager','analyst')",
+              "null": "YES",
+              "key": "",
+              "default": "user",
+              "extra": ""
+            },
+            {
+              "name": "profile_pic",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "projects_assign",
+              "type": "longtext",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "password_hash",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "timestamp",
+              "null": "NO",
+              "key": "",
+              "default": "current_timestamp()",
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "timestamp",
+              "null": "NO",
+              "key": "",
+              "default": "current_timestamp()",
+              "extra": "on update current_timestamp()"
+            },
+            {
+              "name": "status",
+              "type": "enum('active','inactive','suspended')",
+              "null": "YES",
+              "key": "",
+              "default": "active",
+              "extra": ""
+            },
+            {
+              "name": "last_login",
+              "type": "timestamp",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        }
+      },
+      "total_rows": 35426016,
+      "total_size_mb": "7462.90"
+    },
+    "sunchaser_mtk_2025": {
+      "table_count": 4,
+      "tables": {
+        "communication_error": {
+          "row_count": 10682,
+          "size_mb": "2.52",
+          "column_count": 9,
+          "columns": [
+            {
+              "name": "id",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "local_device_id",
+              "type": "bigint(20) unsigned",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "device_id",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "value",
+              "type": "text",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "tcu",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "start_time",
+              "type": "datetime",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "end_time",
+              "type": "datetime",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "timestamp",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "timestamp",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "garbage_data": {
+          "row_count": 8258,
+          "size_mb": "1.52",
+          "column_count": 7,
+          "columns": [
+            {
+              "name": "id",
+              "type": "bigint(20) unsigned",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "local_device_id",
+              "type": "bigint(20)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "device_id",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "device_key",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "value",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "timestamp",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "timestamp",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "local_devices": {
+          "row_count": 4,
+          "size_mb": "0.02",
+          "column_count": 14,
+          "columns": [
+            {
+              "name": "id",
+              "type": "bigint(20) unsigned",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "device_id",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "device_key",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "value",
+              "type": "longtext",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "ok_status",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "alarm",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "manual_mode",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "iot_mode",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "total_tcu",
+              "type": "int(11)",
+              "null": "NO",
+              "key": "",
+              "default": "0",
+              "extra": ""
+            },
+            {
+              "name": "status",
+              "type": "enum('active','inactive')",
+              "null": "NO",
+              "key": "",
+              "default": "active",
+              "extra": ""
+            },
+            {
+              "name": "down_commad_time",
+              "type": "datetime",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "active_system_status",
+              "type": "enum('pending','in process','complete')",
+              "null": "NO",
+              "key": "",
+              "default": "pending",
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "timestamp",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "timestamp",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        },
+        "local_devices_data": {
+          "row_count": 11782,
+          "size_mb": "3.52",
+          "column_count": 18,
+          "columns": [
+            {
+              "name": "id",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "local_device_id",
+              "type": "bigint(20)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "device_id",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "device_key",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "value",
+              "type": "varchar(255)",
+              "null": "NO",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "rows",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "status_name",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "ok_status",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "alarm",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "manual_mode",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "iot_mode",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "wind_speed",
+              "type": "double",
+              "null": "NO",
+              "key": "",
+              "default": "0",
+              "extra": ""
+            },
+            {
+              "name": "wind_direction",
+              "type": "varchar(255)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "actual_angle",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "target_angle",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "battery_percentage",
+              "type": "int(11)",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "created_at",
+              "type": "timestamp",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            },
+            {
+              "name": "updated_at",
+              "type": "timestamp",
+              "null": "YES",
+              "key": "",
+              "default": null,
+              "extra": ""
+            }
+          ]
+        }
+      },
+      "total_rows": 30726,
+      "total_size_mb": "7.58"
+    },
+    "test": {
+      "table_count": 0,
+      "tables": {}
+    }
+  }
+}

@@ -1,0 +1,7 @@
+Flask==2.3.3
+python-dotenv==1.0.0
+# For future database integration:
+# psycopg2-binary==2.9.7  # PostgreSQL
+# PyMySQL==1.1.0         # MySQL
+# sqlite3                # SQLite (built-in)
+# sqlalchemy==2.0.21     # ORM (optional)
