@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 import numpy as np
 import threading
 from database_manager import DatabaseManager
+from page.tcu_analysis import display_tcu_overview
 
 def create_deep_analysis_page():
     """Create deep analysis page with pattern detection and comprehensive analytics"""
@@ -96,7 +97,7 @@ def create_deep_analysis_page():
             if column_name in ["trend_analysis", "status_changes"]:
                 process_advanced_analysis_tab(data, column_name, analysis_type, chart_type, time_agg, tab_name)
             else:
-                process_analysis_tab(data, column_name, analysis_type, chart_type, time_agg, tab_name)
+                process_analysis_tab(data, column_name, analysis_type, chart_type, time_agg, tab_name, start_date, end_date)
 
 def get_analysis_data(db_manager, start_date, end_date):
     """Get data from database for analysis"""
@@ -188,7 +189,7 @@ def get_sorted_ncus_with_values(data, column_name, project=None):
     
     return ncu_options, ncu_mapping
 
-def process_analysis_tab(data, column_name, analysis_type, chart_type, time_agg, tab_name):
+def process_analysis_tab(data, column_name, analysis_type, chart_type, time_agg, tab_name, tcu_date_start, tcu_date_end):
     """Process each analysis tab with enhanced functionality"""
     
     # Top 5 section
@@ -303,6 +304,14 @@ def process_analysis_tab(data, column_name, analysis_type, chart_type, time_agg,
         # Additional Analysis Section
         create_additional_analysis(data, selected_ncu, selected_project, column_name)
         
+        # hear disply tcu _overview
+        display_tcu_overview(
+        selected_ncu, 
+        selected_project, 
+        str(tcu_date_start), 
+        str(tcu_date_end)
+    )
+
     else:
         st.warning(f"No data available for {tab_name}")
 

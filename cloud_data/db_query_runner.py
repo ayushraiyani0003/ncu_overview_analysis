@@ -84,7 +84,7 @@ class DatabaseQueryRunner:
             # Query local_devices_data table with date filter
             query = """
             SELECT * FROM local_devices_data 
-            WHERE created_at BETWEEN %s AND %s 
+            WHERE device_key="STATUS" AND status_name!="ok" AND created_at BETWEEN %s AND %s 
             ORDER BY created_at ASC
             """
             
